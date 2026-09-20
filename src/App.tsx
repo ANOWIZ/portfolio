@@ -13,6 +13,15 @@ const projects = [
     ],
   },
   {
+    title: 'ВиАрти',
+    label: 'Коммерческий проект',
+    description: 'Сайт мини-отеля «ВиАрти» в Екатеринбурге. Помогает гостям выбрать номер, узнать условия проживания и перейти к онлайн-бронированию.',
+    details: ['Пять категорий номеров с фотографиями и ценами.', 'Переход в модуль бронирования Bnovo.', 'Мобильная версия, карта и контакты отеля.'],
+    stack: 'HTML · CSS · JavaScript',
+    note: 'Код закрыт. Права на исходники принадлежат владельцу мини-отеля.',
+    links: [{ label: 'Открыть сайт', href: 'https://виарти.рф/' }],
+  },
+  {
     title: 'Sensoria',
     label: 'Личный проект · прототип',
     description: 'База знаний из сообщений Telegram. Сохраняет материалы, составляет краткие пересказы и позволяет искать заметки по смыслу.',
@@ -93,9 +102,10 @@ export default function App() {
                   <h3>{project.title}</h3>
                   <p className="project-description">{project.description}</p>
                   <div className="project-links">{project.links.map(link => <a href={link.href} target="_blank" rel="noreferrer" key={link.label}>{link.label} <Arrow /></a>)}</div>
+                  {project.note && <p className="stack">{project.note}</p>}
                 </div>
                 <div className="project-details">
-                  <h4>В прототипе</h4>
+                  <h4>Что реализовано</h4>
                   <ul>{project.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
                   <p className="stack">{project.stack}</p>
                 </div>
