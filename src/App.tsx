@@ -25,7 +25,6 @@ const projects = [
     title: 'Sensoria',
     label: 'Личный проект · прототип',
     description: 'База знаний для материалов, которые теряются в переписке Telegram. Прототип сохраняет сообщения, составляет краткие пересказы и ищет заметки по смыслу.',
-    contribution: 'Полный цикл: собрал требования, спроектировал и реализовал прототип с помощью AI-инструментов (vibe-coding).',
     details: ['Telegram → обработка языковой моделью → база знаний.', 'Автоматические теги, пересказ и семантический поиск.', 'Несколько AI-провайдеров и ограничения расходов.'],
     stack: 'Next.js · LLM API · PostgreSQL · Telegram',
     links: [{ label: 'Код на GitHub', href: 'https://github.com/ANOWIZ/sensoria' }],
@@ -34,7 +33,6 @@ const projects = [
     title: 'Контур',
     label: 'Рабочий проект · прототип',
     description: 'Прототип единого процесса квартальной отчётности: от заполнения продуктовым лидом до согласования и сводки для руководства. Показывает показатели направлений, отклонения от плана и риски.',
-    contribution: 'Полный цикл: собрал требования, спроектировал и реализовал прототип с помощью AI-инструментов (vibe-coding).',
     details: ['Автоматический расчёт показателей и полноты отчёта.', 'Согласование, возврат на доработку и история версий.', 'Сводка по продуктам и перенос данных между кварталами.'],
     stack: 'Next.js · TypeScript · PostgreSQL · Drizzle · Recharts',
     note: 'Прототип для возможного внедрения на работе. В открытой версии — демонстрационные данные.',
@@ -44,7 +42,6 @@ const projects = [
     title: 'Веха',
     label: 'Рабочий проект · прототип',
     description: 'Прототип системы, которая связывает задачи команды с трудозатратами и расходами проекта. Позволяет сопоставлять план и факт и видеть загрузку сотрудников.',
-    contribution: 'Полный цикл: собрал требования, спроектировал и реализовал прототип с помощью AI-инструментов (vibe-coding).',
     details: ['Учёт времени и загрузки по проектам.', 'Разграничение доступа и история действий.', 'Клиентский портал и фоновые задачи.'],
     stack: 'FastAPI · React · PostgreSQL · Keycloak · Celery',
     note: 'Прототип для возможного внедрения на работе. Публичная версия обезличена; данные вымышлены.',
@@ -98,7 +95,11 @@ export default function App() {
         </section>
 
         <section className="work section" id="work">
-          <div className="section-heading"><p className="section-mark">01 / Проекты</p><h2>Что я разрабатываю</h2></div>
+          <div className="section-heading">
+            <p className="section-mark">01 / Проекты</p>
+            <h2>Что я разрабатываю</h2>
+            <p className="projects-intro">Во всех проектах отвечал за полный цикл: от сбора требований и проектирования до реализации с помощью AI-инструментов (vibe-coding).</p>
+          </div>
           <div className="projects">
             {projects.map(project => (
               <article className="project" key={project.title}>
@@ -106,7 +107,6 @@ export default function App() {
                   <p className="project-label">{project.label}</p>
                   <h3>{project.title}</h3>
                   <p className="project-description">{project.description}</p>
-                  {project.contribution && <p className="project-description"><strong>Мой вклад.</strong> {project.contribution}</p>}
                   <div className="project-links">{project.links.map(link => <a href={link.href} target="_blank" rel="noreferrer" key={link.label}>{link.label} <Arrow /></a>)}</div>
                   {project.note && <p className="stack">{project.note}</p>}
                 </div>
